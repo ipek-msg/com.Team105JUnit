@@ -86,19 +86,24 @@ public class C01_handleDropdownMenu {
         Bu durumda locate ve secme islemi yeniden yaparsak kodumuz calısır
          */
 
-        String actualSecilenOption=select.getFirstSelectedOption().getText();//getFirstSElectedOption=önceki seçilen optionu getir
+        dropdownWebElementi= driver.findElement(By.xpath("//select[@id='searchDropdownBox']"));
+        select = new Select(dropdownWebElementi);
+        select.selectByVisibleText("Books");
+
+
+        String actualSecilenOption = select.getFirstSelectedOption().getText();//getFirstSElectedOption=önceki seçilen optionu getir
         String expectedSecilecekOption="Books";
 
         Assert.assertEquals(expectedSecilecekOption,actualSecilenOption);
 
+        // Dropdown menudeki secenek sayisinin 28 oldugunu test edin
 
-        //dropdown menudeki secenek sayisinin 28 oldugunu test edin
-        List<WebElement>optionsWebElementListesi=select.getOptions();
+        List<WebElement> optionsWebElementListesi =select.getOptions();
 
-        int actualoptionsayisi=optionsWebElementListesi.size();
-        int exceptedOptionSayisi=28;
+        int actualOptionSayisi = optionsWebElementListesi.size();
+        int expectedOptionSayisi=28;
 
-        Assert.assertEquals(exceptedOptionSayisi,actualoptionsayisi);
+        Assert.assertEquals(expectedOptionSayisi,actualOptionSayisi);
 
 
         Thread.sleep(3000);
