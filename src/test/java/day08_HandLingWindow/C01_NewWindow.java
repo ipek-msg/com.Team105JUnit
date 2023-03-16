@@ -53,7 +53,7 @@ public class C01_NewWindow {
 
             // yeni bir tab'da wisequarter.com'a gidin ve gittigimizi test edin
 
-            driver.switchTo().newWindow(WindowType.TAB);//yeni bir sayfaya geçmek için kullanilir
+            driver.switchTo().newWindow(WindowType.TAB);//yeni bir sayfaya geçmek için kullanilir(farklı sekme)
 
             driver.get("https://www.wisequarter.com");//yeni bir tab acmadan wisequartera gidiyor
 
